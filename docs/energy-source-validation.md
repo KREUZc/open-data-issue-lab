@@ -1,6 +1,6 @@
 # 能源資料源驗證
 
-驗證時間：2026-05-02T01:46:21+08:00  
+驗證時間：2026-05-02T01:48:04+08:00  
 網站資料：`public/data/issues/energy.json`  
 本次 pipeline：`logs/pipeline/latest-energy-run.json`
 
