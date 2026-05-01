@@ -1,0 +1,92 @@
+slug: energy
+title: Open Data Issue Lab 能源觀測
+question: 太陽下山後，電力缺口如何被補上？
+cadence: daily
+status_policy: use_last_success_and_mark_stale
+data_window:
+  recent_days: 7
+  trend_days: 30
+  timezone: Asia/Taipei
+sources:
+  - id: realtime_generation
+    dataset_id: 8931
+    name: 台灣電力公司各機組發電量即時資訊(含外購電力)
+    agency: 台灣電力股份有限公司
+    url: https://service.taipower.com.tw/data/opendata/apply/file/d006001/001.json
+    official_page: https://data.gov.tw/dataset/8931
+    format: json
+    encoding: utf-8-sig
+    update_frequency: 每10分
+    max_download_mb: 1
+    parser: parse_realtime_generation
+    role: current_night_gap_mix
+  - id: today_supply
+    dataset_id: 162595
+    name: 台灣電力公司今日系統供需狀況
+    agency: 台灣電力股份有限公司
+    url: https://service.taipower.com.tw/data/opendata/apply/file/d006020/001.json
+    official_page: https://data.gov.tw/dataset/162595
+    format: json
+    encoding: utf-8-sig
+    update_frequency: 每10分
+    max_download_mb: 1
+    parser: parse_today_supply
+    role: current_load_and_reserve
+  - id: daily_supply_history
+    dataset_id: 19995
+    name: 台灣電力公司過去電力供需資訊
+    agency: 台灣電力股份有限公司
+    url: https://service.taipower.com.tw/data/opendata/apply/file/d006005/001.csv
+    official_page: https://data.gov.tw/dataset/19995
+    format: csv
+    encoding: utf-8-sig
+    update_frequency: 每1月
+    max_download_mb: 1
+    parser: parse_daily_supply_history
+    role: seven_and_thirty_day_daily_context
+  - id: ten_minute_unit_history
+    dataset_id: 37331
+    name: 台灣電力公司各機組過去發電量
+    agency: 台灣電力股份有限公司
+    url: https://service.taipower.com.tw/data/opendata/apply/file/d006010/001.json
+    official_page: https://data.gov.tw/dataset/37331
+    format: json
+    encoding: utf-8-sig
+    update_frequency: 每1月
+    max_download_mb: 5
+    parser: skip_large_resource
+    role: future_hourly_duck_curve_candidate
+metrics:
+  - id: current_generation_mix
+    source: realtime_generation
+    unit: MW
+  - id: current_load
+    source: today_supply
+    unit: 萬瓩
+  - id: reserve_rate
+    source: today_supply
+    unit: "%"
+  - id: latest_7_days_peak
+    source: daily_supply_history
+    unit: 萬瓩
+  - id: latest_30_days_generation_context
+    source: daily_supply_history
+    unit: 萬瓩
+charts:
+  - id: current_mix_bars
+    title: 現在缺口由誰補上
+    type: horizontal_bar
+    metric: current_generation_mix
+  - id: seven_day_peak_load
+    title: 最近7筆可用日資料的尖峰負載
+    type: line
+    metric: latest_7_days_peak
+  - id: thirty_day_energy_context
+    title: 最近30筆可用日資料的太陽、風力、燃氣與燃煤脈絡
+    type: multi_line
+    metric: latest_30_days_generation_context
+limits:
+  - 即時機組資料代表抓取當下的瞬間淨發電量，不等於全天發電量。
+  - 歷史每日供需資料目前為月更新，最新可用日可能落後今日。
+  - 10分鐘級各機組歷史檔約180MB，MVP不下載，避免為了單一頁面消耗不必要流量。
+  - 本頁只做能源結構判讀，不推論電價、碳排或政策成效。

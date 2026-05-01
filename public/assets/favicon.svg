@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Open Data Issue Lab">
+  <rect width="64" height="64" rx="8" fill="#0b0b0b"/>
+  <rect x="8" y="8" width="48" height="48" rx="6" fill="#171717" stroke="#f36458" stroke-width="2"/>
+  <path d="M17 40h30" stroke="#353535" stroke-width="2"/>
+  <path d="M17 32h30" stroke="#353535" stroke-width="2"/>
+  <path d="M17 24h30" stroke="#353535" stroke-width="2"/>
+  <path d="M18 41c5-2 7-14 12-16 6-3 9 10 16 5" fill="none" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="18" cy="41" r="3" fill="#f36458"/>
+  <circle cx="46" cy="30" r="3" fill="#4da3ff"/>
+</svg>

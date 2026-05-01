@@ -1,0 +1,58 @@
+name: Update Open Data Issue Lab data
+
+on:
+  schedule:
+    # Every 6 hours, aligned to 12:05 Asia/Taipei for the noon reference capture.
+    - cron: "5 4,10,16,22 * * *"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch bounded energy issue data
+        run: python scripts/fetch_issue_data.py energy
+
+      - name: Validate energy source consistency
+        run: python scripts/validate_energy_sources.py --write
+
+      - name: Commit updated data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update energy issue data"
+          file_pattern: "public/data/issues/*.json public/data/pipeline/*.json logs/pipeline/*.json docs/energy-source-validation.md"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

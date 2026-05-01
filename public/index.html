@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Data Issue Lab 開放資料議題實驗室</title>
+    <meta
+      name="description"
+      content="Open Data Issue Lab 以政府開放資料為來源，將能源、空氣品質、交通安全、托育人口與居住負擔轉化為可理解的公共議題數字。"
+    >
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要內容</a>
+
+    <header class="site-header" aria-label="網站導覽">
+      <a class="brand" href="#top" aria-label="Open Data Issue Lab 首頁">
+        <span class="brand-mark" aria-hidden="true">OD</span>
+        <span>
+          <strong>Open Data Issue Lab</strong>
+          <small>開放資料議題實驗室</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="主選單">
+        <a href="#energy">能源</a>
+        <a href="#issues">五大議題</a>
+        <a href="#method">方法</a>
+        <a href="#sources">來源</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">MVP 01 / ENERGY ISSUE</p>
+          <h1 id="hero-title">太陽下山後，電力缺口如何被補上？</h1>
+          <p class="lead" id="hero-answer">正在讀取能源資料。</p>
+          <div class="hero-actions" aria-label="資料狀態">
+            <a class="primary-action" href="#energy">查看能源數字</a>
+            <span class="status-pill" id="freshness-pill">資料載入中</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="即時發電結構">
+          <div class="visual-grid" aria-hidden="true"></div>
+          <div class="mix-panel">
+            <div class="panel-heading">
+              <span>Current generation mix</span>
+              <strong id="current-total">-- MW</strong>
+            </div>
+            <div class="mix-bars" id="mix-bars"></div>
+            <p class="mix-reference-note" id="mix-reference-note"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="核心能源數字">
+        <article>
+          <span>燃氣與燃煤即時支撐</span>
+          <strong id="gas-coal-metric">--</strong>
+          <small>以抓取當下各機組淨發電量估算</small>
+        </article>
+        <article>
+          <span>目前用電量</span>
+          <strong id="load-metric">--</strong>
+          <small>台電今日系統供需狀況，單位萬瓩</small>
+        </article>
+        <article>
+          <span>預估尖峰備轉容量率</span>
+          <strong id="reserve-metric">--</strong>
+          <small id="reserve-caption">--</small>
+        </article>
+        <article>
+          <span>本次下載量</span>
+          <strong id="download-metric">--</strong>
+          <small>網站顯示摘要，完整 log 留在 pipeline JSON</small>
+        </article>
+      </section>
+
+      <section class="section energy-section" id="energy" aria-labelledby="energy-title">
+        <div class="section-intro">
+          <p class="eyebrow">ENERGY CASE</p>
+          <h2 id="energy-title">7 天與 30 天：先看少量、可追溯、足夠理解的數字</h2>
+          <p>
+            MVP 不抓取 180MB 的 10 分鐘級歷史檔。這一版先用即時機組資料回答當下結構，
+            再用最近可用的每日供需資料看 7 天與 30 天趨勢。
+          </p>
+        </div>
+
+        <div class="chart-grid">
+          <article class="chart-panel">
+            <div class="panel-heading">
+              <span>Latest 7 available days</span>
+              <strong>尖峰負載</strong>
+            </div>
+            <div class="chart-box" id="seven-day-chart" role="img" aria-label="最近7筆可用日資料的尖峰負載折線圖"></div>
+          </article>
+
+          <article class="chart-panel">
+            <div class="panel-heading">
+              <span>Latest 30 available days</span>
+              <strong>能源脈絡</strong>
+            </div>
+            <div class="chart-box" id="thirty-day-chart" role="img" aria-label="最近30筆可用日資料的太陽、風力、燃氣與燃煤趨勢圖"></div>
+          </article>
+        </div>
+
+        <div class="reading-notes">
+          <article>
+            <h3>怎麼看</h3>
+            <p>
+              即時圖先看太陽能是否歸零，再看燃氣、燃煤、儲能與水力的相對位置。日資料則只回答
+              「最近可用資料中，白天再生能源與尖峰負載的脈絡」，不把它誤當即時曲線。
+            </p>
+          </article>
+          <article>
+            <h3>不能怎麼看</h3>
+            <p>
+              這不是電價、碳排或政策績效模型。若要做真正的鴨子曲線，需要 10 分鐘級歷史資料，
+              但該檔案目前約 180MB，MVP 先以流量保守與高可用性為優先。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section issue-blocks" id="issues" aria-labelledby="issues-title">
+        <div class="section-intro">
+          <p class="eyebrow">ISSUE MAP</p>
+          <h2 id="issues-title">五大主題先開路，能源先做深</h2>
+          <p>首頁保留未來議題入口，但不把未完成主題偽裝成已完成產品。</p>
+        </div>
+        <div class="issue-grid">
+          <article class="issue-card featured">
+            <span>01</span>
+            <h3>能源</h3>
+            <p>從太陽能日落、尖峰負載、備轉容量與機組結構，理解電網如何在晚間接住需求。</p>
+            <a href="#energy">進入能源觀測</a>
+          </article>
+          <article class="issue-card">
+            <span>02</span>
+            <h3>空氣品質</h3>
+            <p>可從測站 AQI、PM2.5、風向與地區差異，討論日常健康風險與移動路徑。</p>
+          </article>
+          <article class="issue-card">
+            <span>03</span>
+            <h3>交通安全</h3>
+            <p>可從事故地點、時段、道路型態與傷亡程度，整理通勤風險與改善優先順序。</p>
+          </article>
+          <article class="issue-card">
+            <span>04</span>
+            <h3>托育人口</h3>
+            <p>可串接出生數、幼兒園、托育名額與行政區人口，觀察家庭支持資源的空間落差。</p>
+          </article>
+          <article class="issue-card">
+            <span>05</span>
+            <h3>居住負擔</h3>
+            <p>可從實價登錄、所得、租金與交通可達性，看見買不起與住太遠之間的取捨。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section method-section" id="method" aria-labelledby="method-title">
+        <div class="section-intro">
+          <p class="eyebrow">METHOD</p>
+          <h2 id="method-title">資料流程：輕量，但能換主題</h2>
+          <p>
+            每個主題用一份 `issue-{issue-slug}.yaml` 描述來源、parser、指標、圖表與限制。
+            pipeline 只下載 guardrail 允許的資料，輸出前端可直接使用的 JSON。
+          </p>
+        </div>
+        <ol class="flow" aria-label="資料處理流程">
+          <li>
+            <span>01</span>
+            <strong>Issue YAML</strong>
+            <p>定義公共問題、資料來源、下載上限與 parser。</p>
+          </li>
+          <li>
+            <span>02</span>
+            <strong>Guarded Fetch</strong>
+            <p>先 HEAD 檢查大小，大檔只記錄不下載。</p>
+          </li>
+          <li>
+            <span>03</span>
+            <strong>Parser</strong>
+            <p>依資料格式解析 JSON 或 CSV，轉成穩定指標。</p>
+          </li>
+          <li>
+            <span>04</span>
+            <strong>Static JSON</strong>
+            <p>網站只讀處理後資料，失敗時沿用最後成功版本並標 stale。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section sources-section" id="sources" aria-labelledby="sources-title">
+        <div class="section-intro">
+          <p class="eyebrow">SOURCE HEALTH</p>
+          <h2 id="sources-title">來源、流量與限制</h2>
+          <p id="pipeline-summary">正在讀取 pipeline 摘要。</p>
+        </div>
+        <div class="source-list" id="source-list"></div>
+        <div class="limits-panel">
+          <h3>資料限制</h3>
+          <ul id="limits-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Open Data Issue Lab 開放資料議題實驗室</p>
+      <p>所有數字皆保留來源、更新時間與處理限制。MVP 目前聚焦能源議題。</p>
+    </footer>
+
+    <script src="./assets/app.js" defer></script>
+  </body>
+</html>
