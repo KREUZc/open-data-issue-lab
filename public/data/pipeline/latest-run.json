@@ -1,7 +1,7 @@
 {
   "issue_slug": "energy",
-  "started_at": "2026-05-04T06:50:11+08:00",
-  "finished_at": "2026-05-04T06:50:17+08:00",
+  "started_at": "2026-05-04T14:42:51+08:00",
+  "finished_at": "2026-05-04T14:42:57+08:00",
   "status": "success",
   "sources": [
     {
@@ -12,16 +12,16 @@
       "official_page": "https://data.gov.tw/dataset/8931",
       "parser": "parse_realtime_generation",
       "max_download_mb": 1.0,
-      "downloaded_bytes": 36711,
+      "downloaded_bytes": 36698,
       "downloaded_mb": 0.035,
       "parsed_records": 216,
       "status": "parsed",
       "head_status": 200,
-      "content_length": 36711,
+      "content_length": 36698,
       "content_length_mb": 0.035,
       "content_type": "application/json",
-      "last_modified": "Sun, 03 May 2026 22:45:07 GMT",
-      "etag": "\"80db467d4edbdc1:0\"",
+      "last_modified": "Mon, 04 May 2026 06:35:06 GMT",
+      "etag": "\"0c9302590dbdc1:0\"",
       "http_status": 200
     },
     {
@@ -40,8 +40,8 @@
       "content_length": 689,
       "content_length_mb": 0.0007,
       "content_type": "application/json",
-      "last_modified": "Sun, 03 May 2026 22:44:26 GMT",
-      "etag": "\"0c1d6644edbdc1:0\"",
+      "last_modified": "Mon, 04 May 2026 06:34:25 GMT",
+      "etag": "\"80aec0c90dbdc1:0\"",
       "http_status": 200
     },
     {
@@ -86,9 +86,9 @@
     }
   ],
   "output_path": "public/data/issues/energy.json",
-  "total_downloaded_bytes": 172470,
+  "total_downloaded_bytes": 172457,
   "total_downloaded_mb": 0.1645,
   "total_parsed_records": 675,
-  "output_bytes": 20798,
-  "output_mb": 0.0198
+  "output_bytes": 20945,
+  "output_mb": 0.02
 }
