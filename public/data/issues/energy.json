@@ -4,17 +4,17 @@
     "issue_slug": "energy",
     "issue_title": "Open Data Issue Lab 能源觀測",
     "question": "太陽下山後，電力缺口如何被補上？",
-    "generated_at": "2026-05-08T14:00:45+08:00",
+    "generated_at": "2026-05-08T19:22:01+08:00",
     "timezone": "Asia/Taipei",
     "status": "fresh",
     "stale": false
   },
   "summary": {
-    "answer": "目前太陽能仍有約 7,987 MW，燃氣與燃煤合計約 22,030 MW，是主要調度支撐。",
-    "source_updated_at": "2026-05-08T13:50:00",
+    "answer": "目前太陽能接近 0 MW，燃氣與燃煤合計約 23,693 MW，承擔約 75.9% 的即時發電。",
+    "source_updated_at": "2026-05-08T19:10:00",
     "latest_daily_available_date": "2026-03-31",
-    "current_total_generation_mw": 35680.2,
-    "current_load_10mw": 3442.2,
+    "current_total_generation_mw": 31207.2,
+    "current_load_10mw": 3120.7,
     "forecast_reserve_rate": 20.94,
     "forecast_peak_hour_range": "13:00-16:00",
     "thirty_day_averages": {
@@ -31,57 +31,57 @@
       {
         "id": "gas",
         "label": "燃氣",
-        "mw": 14651.6,
-        "share": 41.06,
+        "mw": 16153.4,
+        "share": 51.76,
         "color": "#ff8c00"
       },
       {
         "id": "coal",
         "label": "燃煤",
-        "mw": 7377.9,
-        "share": 20.68,
+        "mw": 7539.8,
+        "share": 24.16,
         "color": "#696969"
-      },
-      {
-        "id": "solar",
-        "label": "太陽能",
-        "mw": 7986.7,
-        "share": 22.38,
-        "color": "#ffd700"
       },
       {
         "id": "wind",
         "label": "風力",
-        "mw": 3290.8,
-        "share": 9.22,
+        "mw": 4134.4,
+        "share": 13.25,
         "color": "#2e8b57"
       },
       {
         "id": "hydro",
         "label": "水力",
-        "mw": 264.1,
-        "share": 0.74,
+        "mw": 363.6,
+        "share": 1.17,
         "color": "#1e90ff"
+      },
+      {
+        "id": "storage",
+        "label": "儲能/抽蓄",
+        "mw": 762.8,
+        "share": 2.44,
+        "color": "#00c2ff"
       },
       {
         "id": "cogen",
         "label": "汽電共生",
-        "mw": 1884.9,
-        "share": 5.28,
+        "mw": 2022.0,
+        "share": 6.48,
         "color": "#c17c4a"
       },
       {
         "id": "oil",
         "label": "燃油",
-        "mw": 184.2,
-        "share": 0.52,
+        "mw": 190.0,
+        "share": 0.61,
         "color": "#b45a3c"
       },
       {
         "id": "other",
         "label": "其他",
-        "mw": 40.0,
-        "share": 0.11,
+        "mw": 41.2,
+        "share": 0.13,
         "color": "#b9b9b9"
       }
     ],
@@ -95,18 +95,18 @@
       "source_id": "today_supply",
       "dataset_id": 162595,
       "parsed_records": 4,
-      "current_load_10mw": 3442.2,
-      "current_util_rate": 75.0,
+      "current_load_10mw": 3120.7,
+      "current_util_rate": 80.0,
       "forecast_max_supply_10mw": 4172.3,
       "forecast_peak_load_10mw": 3450.0,
       "forecast_reserve_10mw": 722.3,
       "forecast_reserve_rate": 20.94,
       "forecast_indicator": "G",
       "forecast_peak_hour_range": "13:00-16:00",
-      "publish_time_raw": "115.05.08(五)13:50",
-      "publish_time": "2026-05-08T13:50",
+      "publish_time_raw": "115.05.08(五)19:10",
+      "publish_time": "2026-05-08T19:10",
       "yesterday_date": "115.05.07",
-      "real_hour_supply_10mw": 4580.8,
+      "real_hour_supply_10mw": 3858.4,
       "real_hour_peak_time": "2026.05.08 05:06"
     }
   },
@@ -635,13 +635,13 @@
     ]
   },
   "pipeline_summary": {
-    "total_downloaded_bytes": 172356,
-    "total_downloaded_mb": 0.1644,
+    "total_downloaded_bytes": 172294,
+    "total_downloaded_mb": 0.1643,
     "total_parsed_records": 675,
     "skipped_resource_content_length_bytes": 189598991,
     "skipped_resource_content_length_mb": 180.8157,
     "source_count": 4,
-    "output_bytes": 20749,
+    "output_bytes": 20756,
     "output_mb": 0.0198
   },
   "sources": [
@@ -653,16 +653,16 @@
       "official_page": "https://data.gov.tw/dataset/8931",
       "parser": "parse_realtime_generation",
       "max_download_mb": 1.0,
-      "downloaded_bytes": 36595,
-      "downloaded_mb": 0.0349,
+      "downloaded_bytes": 36533,
+      "downloaded_mb": 0.0348,
       "parsed_records": 216,
       "status": "parsed",
       "head_status": 200,
-      "content_length": 36595,
-      "content_length_mb": 0.0349,
+      "content_length": 36533,
+      "content_length_mb": 0.0348,
       "content_type": "application/json",
-      "last_modified": "Fri, 08 May 2026 05:55:06 GMT",
-      "etag": "\"0d95438afdedc1:0\"",
+      "last_modified": "Fri, 08 May 2026 11:15:07 GMT",
+      "etag": "\"80ef4eddbdedc1:0\"",
       "http_status": 200
     },
     {
@@ -681,8 +681,8 @@
       "content_length": 691,
       "content_length_mb": 0.0007,
       "content_type": "application/json",
-      "last_modified": "Fri, 08 May 2026 05:54:25 GMT",
-      "etag": "\"80bee41fafdedc1:0\"",
+      "last_modified": "Fri, 08 May 2026 11:14:26 GMT",
+      "etag": "\"0d594d4dbdedc1:0\"",
       "http_status": 200
     },
     {
