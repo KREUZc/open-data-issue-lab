@@ -1,7 +1,7 @@
 {
   "issue_slug": "energy",
-  "started_at": "2026-05-29T16:01:47+08:00",
-  "finished_at": "2026-05-29T16:01:54+08:00",
+  "started_at": "2026-05-29T20:48:36+08:00",
+  "finished_at": "2026-05-29T20:48:43+08:00",
   "status": "success",
   "sources": [
     {
@@ -12,16 +12,16 @@
       "official_page": "https://data.gov.tw/dataset/8931",
       "parser": "parse_realtime_generation",
       "max_download_mb": 1.0,
-      "downloaded_bytes": 36445,
-      "downloaded_mb": 0.0348,
+      "downloaded_bytes": 36662,
+      "downloaded_mb": 0.035,
       "parsed_records": 216,
       "status": "parsed",
       "head_status": 200,
-      "content_length": 36445,
-      "content_length_mb": 0.0348,
+      "content_length": 36662,
+      "content_length_mb": 0.035,
       "content_type": "application/json",
-      "last_modified": "Fri, 29 May 2026 07:55:06 GMT",
-      "etag": "\"0698a7640efdc1:0\"",
+      "last_modified": "Fri, 29 May 2026 12:45:06 GMT",
+      "etag": "\"0b5bff968efdc1:0\"",
       "http_status": 200
     },
     {
@@ -40,8 +40,8 @@
       "content_length": 690,
       "content_length_mb": 0.0007,
       "content_type": "application/json",
-      "last_modified": "Fri, 29 May 2026 07:54:26 GMT",
-      "etag": "\"0e5b25e40efdc1:0\"",
+      "last_modified": "Fri, 29 May 2026 12:44:25 GMT",
+      "etag": "\"809a4fe168efdc1:0\"",
       "http_status": 200
     },
     {
@@ -77,18 +77,18 @@
       "parsed_records": 0,
       "status": "skipped",
       "head_status": 200,
-      "content_length": 189598991,
-      "content_length_mb": 180.8157,
+      "content_length": 196107048,
+      "content_length_mb": 187.0223,
       "content_type": "application/json",
-      "last_modified": "Tue, 21 Apr 2026 01:25:16 GMT",
-      "etag": "\"02651b52dd1dc1:0\"",
+      "last_modified": "Fri, 29 May 2026 08:19:49 GMT",
+      "etag": "\"80407aea43efdc1:0\"",
       "reason": "download_guardrail"
     }
   ],
   "output_path": "public/data/issues/energy.json",
-  "total_downloaded_bytes": 172205,
-  "total_downloaded_mb": 0.1642,
+  "total_downloaded_bytes": 172422,
+  "total_downloaded_mb": 0.1644,
   "total_parsed_records": 675,
-  "output_bytes": 20945,
-  "output_mb": 0.02
+  "output_bytes": 20807,
+  "output_mb": 0.0198
 }
