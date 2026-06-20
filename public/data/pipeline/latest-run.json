@@ -1,7 +1,7 @@
 {
   "issue_slug": "energy",
-  "started_at": "2026-06-20T15:53:17+08:00",
-  "finished_at": "2026-06-20T15:53:23+08:00",
+  "started_at": "2026-06-20T19:59:41+08:00",
+  "finished_at": "2026-06-20T19:59:50+08:00",
   "status": "success",
   "sources": [
     {
@@ -20,8 +20,8 @@
       "content_length": 36429,
       "content_length_mb": 0.0347,
       "content_type": "application/json",
-      "last_modified": "Sat, 20 Jun 2026 07:45:08 GMT",
-      "etag": "\"05a31b7880dd1:0\"",
+      "last_modified": "Sat, 20 Jun 2026 11:55:07 GMT",
+      "etag": "\"801f4ba3ab0dd1:0\"",
       "http_status": 200
     },
     {
@@ -40,8 +40,8 @@
       "content_length": 691,
       "content_length_mb": 0.0007,
       "content_type": "application/json",
-      "last_modified": "Sat, 20 Jun 2026 07:44:26 GMT",
-      "etag": "\"0a9289e880dd1:0\"",
+      "last_modified": "Sat, 20 Jun 2026 11:54:26 GMT",
+      "etag": "\"05db8aab0dd1:0\"",
       "http_status": 200
     },
     {
@@ -89,6 +89,6 @@
   "total_downloaded_bytes": 181243,
   "total_downloaded_mb": 0.1728,
   "total_parsed_records": 705,
-  "output_bytes": 20901,
-  "output_mb": 0.0199
+  "output_bytes": 20765,
+  "output_mb": 0.0198
 }
